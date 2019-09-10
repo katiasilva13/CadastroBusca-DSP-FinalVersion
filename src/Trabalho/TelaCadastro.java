@@ -13,6 +13,7 @@ import javax.swing.JOptionPane;
 /**
  *
  * @author Dani
+ * @author ktia-
  */
 public class TelaCadastro extends javax.swing.JInternalFrame {
 

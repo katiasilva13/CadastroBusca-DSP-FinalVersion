@@ -13,6 +13,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
+ * @author Dani
  * @author ktia-
  */
 public class Busca {
@@ -48,21 +49,10 @@ public class Busca {
         }
     }
 
-    public String buscaNomeRes(String nome) throws UnsupportedEncodingException, IOException {
-        pesquisaNome(nome);
-        if (tem) {
-            return "Encontrado\n" + registro;
-        } else {
-            return "Não encotrado";
-        }
-
-    }
-
     public boolean pesquisaNome(String nome) throws FileNotFoundException, UnsupportedEncodingException, IOException {
         InputStream is = new FileInputStream("src\\cadastro.txt");
         InputStreamReader isr = new InputStreamReader(is, "UTF-8");
         BufferedReader br = new BufferedReader(isr);
-
         StringBuffer stringBuffer = new StringBuffer("");
         String line = null;
 
@@ -76,15 +66,26 @@ public class Busca {
         return tem;
 
     }
+    
+    public String buscaNomeRes(String nome) throws UnsupportedEncodingException, IOException {
+        pesquisaNome(nome);
+        if (tem) {
+            return "Encontrado\n" + registro;
+        } else {
+            return "Não encotrado";
+        }
+
+    }
 
     public String listar() throws FileNotFoundException, UnsupportedEncodingException, IOException {
         InputStream is = new FileInputStream("src\\cadastro.txt");
         InputStreamReader isr = new InputStreamReader(is, "UTF-8");
         BufferedReader br = new BufferedReader(isr);
-
         StringBuffer stringBuffer = new StringBuffer("");
         String line = null;
-        String displayMessage = "\tRegistro:\n";;
+        
+        String displayMessage = "\tRegistro:\n";
+        
         while ((line = br.readLine()) != null) {
             stringBuffer.append(line);
             displayMessage += line + "\n";

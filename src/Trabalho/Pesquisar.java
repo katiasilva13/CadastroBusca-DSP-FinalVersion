@@ -13,6 +13,7 @@ import javax.swing.JOptionPane;
 /**
  *
  * @author eriks
+ * @author ktia-
  */
 public class Pesquisar extends javax.swing.JInternalFrame {
 
